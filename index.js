@@ -20,14 +20,14 @@ function titleCase(word){
   return splitString.join("");
 }
 
-const titleCased = () => {
-  tutorials.forEach(sentence => {
-    sentence.split(" ").map(word => {
-      word = titleCase(word);
-    })
-    return sentence;
+const titleCased = (input) => {
+  return tutorials.map( sentence => {
+    let words = sentence.split(' ')
+    let capitalizedWords =
+      words.map( word => word.charAt(0).toUpperCase() + word.slice(1) )
+    let response = capitalizedWords.join(' ')
+    return response
   })
 }
 
-titleCased();
 
